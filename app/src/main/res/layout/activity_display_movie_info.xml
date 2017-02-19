@@ -3,24 +3,29 @@
     android:id="@+id/activity_display_movie_info"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
+            android:layout_marginEnd="16dp"
             android:id="@+id/movie_poster"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
@@ -37,10 +42,10 @@
     </LinearLayout>
 
     <RatingBar
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:numStars="10"
         android:isIndicator="true"
+        android:numStars="5"
         android:id="@+id/movie_vote_average"/>
 
     <TextView

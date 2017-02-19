@@ -42,28 +42,29 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     public MovieViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_view_movie, parent, false);
 
+        return new MovieViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(MovieViewHolder movieViewHolder, final int position) {
+
+        Uri posterUri = Uri.parse(mMovieList.get(position).getPosterUrl());
+        Context context = MyApplication.getAppContext();
+        Picasso.with(context).load(posterUri).into(movieViewHolder.mPoster);
+
         View.OnClickListener click = new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
 
                 Intent myIntent = new Intent(mContext,DisplayMovieInfo.class);
+                myIntent.putExtra("Movie Data", mMovieList.get(position));
                 mContext.startActivity(myIntent);
 
             }
         };
 
-        view.setOnClickListener(click);
-
-        return new MovieViewHolder(view);
-    }
-
-    @Override
-    public void onBindViewHolder(MovieViewHolder movieViewHolder, int position) {
-
-        Uri posterUri = Uri.parse(mMovieList.get(position).getPosterUrl());
-        Context context = MyApplication.getAppContext();
-        Picasso.with(context).load(posterUri).into(movieViewHolder.mPoster);
+        movieViewHolder.mPoster.setOnClickListener(click);
 
     }
 
