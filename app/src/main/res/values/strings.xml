@@ -2,7 +2,7 @@
     <string name="app_name">My Movie App</string>
     <string name="sort_popular">/popular</string>
     <string name="movie_db_base_url">http://api.themoviedb.org/3/movie</string>
-    <string name="API_KEY_____">\?api_key=2ab8472a9bce149515d8c35b1ac79be6</string>
+    <string name="API_KEY_____">\?api_key=XXXXXXXXXXXXXXXXXXXXXX</string>
     <string name="sort_top_rated">/top_rated</string>
     <string name="submit">SUBMIT</string>
     <string name="movie_poster">Movie Poster</string>
